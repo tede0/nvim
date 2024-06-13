@@ -13,8 +13,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle terminal" })
 vim.keymap.set("t", "<C-q>", "<cmd>close<CR>", { desc = "Close terminal" })
 
-
-
 -- Ease of use
 vim.keymap.set("n", "<leader>vs", "<C-w>v")      -- vertical split
 vim.keymap.set("n", "<leader>hs", "<C-w>s")      -- horizontal split
