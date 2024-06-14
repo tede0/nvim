@@ -39,13 +39,22 @@ return {
           end,
         },
         {
-          type = "python",
-          request = "launch",
-          name = "FastAPI: Uvicorn",
-          program = "${workspaceFolder}/venv/bin/uvicorn", -- Adjust the path to Uvicorn as needed
-          args = { "main:app", "--host", "127.0.0.1", "--port", "8000", "--reload" },
-          console = "integratedTerminal",
-          justMyCode = true,
+          type = 'python',
+          request = 'launch',
+          name = 'FastAPI module',
+          module = 'uvicorn',
+          args = function()
+            return {
+              vim.fn.input(
+                'FastAPI app module > ',
+                'main:app',
+                'file'
+              ),
+              '--use-colors',
+            }
+          end,
+          pythonPath = 'python',
+          console = 'integratedTerminal',
         }
       }
 
