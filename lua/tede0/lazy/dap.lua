@@ -19,8 +19,17 @@ return {
       -- Setting up virtual text
       require("nvim-dap-virtual-text").setup()
 
-      -- Setting up Python debugging
-      dap_python.setup("~/.virtualenvs/debugpy/bin/python")
+      -- Function to get the project's virtual environment path
+      local function get_python_path()
+        local venv_path = os.getenv("VIRTUAL_ENV")
+        if venv_path then
+          return venv_path .. "/bin/python"
+        else
+          return "/usr/bin/python"
+        end
+      end
+
+      dap_python.setup(get_python_path())
 
       -- Adding general Python debug configuration
       dap.configurations.python = {
@@ -29,14 +38,7 @@ return {
           request = "launch",
           name = "Launch file",
           program = "${file}",
-          pythonPath = function()
-            local venv_path = os.getenv("VIRTUAL_ENV")
-            if venv_path then
-              return venv_path .. "/bin/python"
-            else
-              return "/usr/bin/python"
-            end
-          end,
+          pythonPath = get_python_path
         },
         {
           type = 'python',
@@ -53,7 +55,7 @@ return {
               '--use-colors',
             }
           end,
-          pythonPath = 'python',
+          pythonPath = get_python_path,
           console = 'integratedTerminal',
         }
       }
