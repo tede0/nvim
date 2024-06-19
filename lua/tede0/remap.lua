@@ -25,7 +25,7 @@ set("n", "<leader>hs", "<C-w>s")      -- horizontal split
 set("n", "<leader>x", "<cmd> x <CR>") -- close buffer
 
 -- Tabs
-set("n", "<leader>tt", "<cmd>tabnew<CR>")
+set("n", "<leader>nt", "<cmd>tabnew<CR>")
 set("n", "<TAB>", "gt")
 set("n", "<S-TAB>", "gT")
 

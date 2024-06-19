@@ -25,6 +25,7 @@ return {
           floats = "dark",   -- style for floating windows
         },
       })
+      ApplyColorscheme()
     end
   },
 }
