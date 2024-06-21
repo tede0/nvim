@@ -48,10 +48,8 @@ set("n", "N", "Nzzzv")
 
 set("n", "<Esc>", "<CMD> noh <CR>")                                           -- clear highlights
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- rename
-
+set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer.sh<CR>")
 set("x", "<leader>p", [["_dP]])
 
 set({ "n", "v" }, "<leader>y", [["+y]])
-set("n", "<leader>Y", [["+Y]])
-
-set({ "n", "v" }, "<leader>d", [["_d]])
+set({ "n", "v" }, "<leader>d", [["_d]]) -- delete without yank
