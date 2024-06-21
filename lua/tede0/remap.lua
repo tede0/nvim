@@ -24,6 +24,17 @@ set("n", "<leader>vs", "<C-w>v")      -- vertical split
 set("n", "<leader>hs", "<C-w>s")      -- horizontal split
 set("n", "<leader>x", "<cmd> x <CR>") -- close buffer
 
+-- Quick chat with Copilot
+set("n", "<leader>ccq", function()
+  -- Prompt the user for input with the message "Quick Chat: "
+  local input = vim.fn.input("Quick Chat: ")
+
+  -- If the user provided input, call the `ask` function from `CopilotChat` module
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end, { desc = "Ask Copilot about current buffer" })
+
 -- Tabs
 set("n", "<leader>nt", "<cmd>tabnew<CR>")
 set("n", "<TAB>", "gt")
