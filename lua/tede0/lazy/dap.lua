@@ -77,7 +77,6 @@ return {
       vim.keymap.set("n", "<F5>", dap.step_back)
 
       vim.keymap.set("n", "<leader>dq", function()
-        require('dap.breakpoints').clear()
         require('dap').terminate()
         require('dap').close()
         require('dapui').close {}
