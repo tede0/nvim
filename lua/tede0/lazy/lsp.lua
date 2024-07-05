@@ -31,7 +31,7 @@ return {
 
         -- Python
         "pyright",
-        "ruff_lsp",
+        -- "ruff_lsp",
 
         -- Web
         "html",
