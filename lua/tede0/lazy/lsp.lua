@@ -31,7 +31,6 @@ return {
 
         -- Python
         "pyright",
-        -- "ruff_lsp",
 
         -- Web
         "html",
@@ -61,6 +60,25 @@ return {
             }
           }
         end,
+
+        ["pyright"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.pyright.setup {
+            capabilities = capabilities,
+            settings = {
+              python = {
+                analysis = {
+                  typeCheckingMode = "strict",             -- or "basic"; change based on your preference
+                  diagnosticSeverityOverrides = {
+                    reportMissingTypeArgument = "warning", -- Add more settings if needed
+                    reportMissingReturnType = "warning",   -- Enable warning for missing return type
+                  }
+                }
+              }
+            },
+
+          }
+        end
       }
     })
 
