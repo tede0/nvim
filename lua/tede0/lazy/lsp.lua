@@ -68,7 +68,7 @@ return {
             settings = {
               python = {
                 analysis = {
-                  typeCheckingMode = "strict",             -- or "basic"; change based on your preference
+                  typeCheckingMode = "basic",              -- or "basic"; change based on your preference
                   diagnosticSeverityOverrides = {
                     reportMissingTypeArgument = "warning", -- Add more settings if needed
                     reportMissingReturnType = "warning",   -- Enable warning for missing return type
