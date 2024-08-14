@@ -135,6 +135,28 @@ return {
 					},
 				})
 			end,
+			["pylsp"] = function()
+				lspconfig["pylsp"].setup({
+					capabilities = capabilities,
+					settings = {
+						pylsp = {
+							plugins = {
+								-- formatter options
+								black = { enabled = true },
+								-- linter options
+								pylint = { enabled = true, executable = "pylint" },
+								-- type checker
+								pylsp_mypy = {
+									enabled = true,
+									report_progress = true,
+									live_mode = true,
+								},
+								isort = { enabled = true },
+							},
+						},
+					},
+				})
+			end,
 		})
 	end,
 }

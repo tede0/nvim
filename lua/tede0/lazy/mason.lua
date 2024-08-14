@@ -32,7 +32,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
-				"pyright",
+				"pylsp",
 			},
 		})
 
@@ -44,6 +44,7 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
+				"mypy",
 			},
 		})
 	end,
