@@ -135,23 +135,17 @@ return {
 					},
 				})
 			end,
-			["pylsp"] = function()
-				lspconfig["pylsp"].setup({
+			-- Replace the existing ["pylsp"] handler with this:
+			["pyright"] = function()
+				lspconfig["pyright"].setup({
 					capabilities = capabilities,
 					settings = {
-						pylsp = {
-							plugins = {
-								-- formatter options
-								black = { enabled = true },
-								-- linter options
-								pylint = { enabled = true, executable = "pylint" },
-								-- type checker
-								pylsp_mypy = {
-									enabled = true,
-									report_progress = true,
-									live_mode = true,
-								},
-								isort = { enabled = true },
+						python = {
+							analysis = {
+								typeCheckingMode = "basic",
+								autoSearchPaths = true,
+								diagnosticMode = "workspace",
+								useLibraryCodeForTypes = true,
 							},
 						},
 					},
