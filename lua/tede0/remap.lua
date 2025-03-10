@@ -1,7 +1,6 @@
 local set = vim.keymap.set
 vim.g.mapleader = " "
 
-
 -- Filetree
 set("n", "-", "<CMD>Oil<CR>")
 
@@ -20,13 +19,13 @@ set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Ease of use
-set("n", "<leader>vs", "<C-w>v")      -- vertical split
-set("n", "<leader>hs", "<C-w>s")      -- horizontal split
+set("n", "<leader>vs", "<C-w>v") -- vertical split
+set("n", "<leader>hs", "<C-w>s") -- horizontal split
 set("n", "<leader>x", "<cmd> x <CR>") -- close buffer
 
 -- Tabs
 set("n", "<leader>nt", "<cmd>tabnew<CR>")
-set("n", "<TAB>", "gt")
+-- set("n", "<TAB>", "gt")
 set("n", "<S-TAB>", "gT")
 
 set("n", "J", "mzJ`z")
@@ -35,7 +34,7 @@ set("n", "<C-u>", "<C-u>zz")
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
-set("n", "<Esc>", "<CMD> noh <CR>")                                           -- clear highlights
+set("n", "<Esc>", "<CMD> noh <CR>") -- clear highlights
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- rename
 set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer.sh<CR>")
 set("x", "<leader>p", [["_dP]])
